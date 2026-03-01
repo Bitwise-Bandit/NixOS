@@ -14,8 +14,6 @@
 
       packages = [
         pkgs.go
-        pkgs.starship
-        pkgs.bash-completion
         pkgs.gopls 
         pkgs.delve
         pkgs.go-tools
