@@ -21,6 +21,9 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Enable docker
+  virtualisation.docker.enable = true;
+
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
@@ -95,9 +98,14 @@
 
   # Enable tlp
    services.tlp.enable = true;
+
+  # Enable flatpak
+   services.flatpak.enable = true;
   
   # Enable libvirtd service
    virtualisation.libvirtd.enable = true;
+
+
   # Enable zram
    zramSwap.enable = true;
 
@@ -112,7 +120,7 @@
    users.users.vis = {
      isNormalUser = true;
      shell = pkgs.zsh;
-     extraGroups = [ "wheel" "networkmanager" "qemu" "kvm" "libvirtd" "disk" "input"]; # Enable ‘sudo’ for the user.
+     extraGroups = [ "wheel" "networkmanager" "qemu" "kvm" "libvirtd" "disk" "input" "docker" ]; 
      packages = with pkgs; [
        tree
      ];

@@ -9,8 +9,10 @@
   # Packages that should be installed to the user profile.
  
   home.packages = with pkgs; [
+    cmake
     qimgv
     gammastep
+    gdb
     librewolf
     yazi
   ];
@@ -53,8 +55,8 @@
         # DIRECTORY
         directory = {
           style = "purple";
-          truncation_length = 3;
-          truncate_to_repo = true;
+          truncation_length = 0;
+          truncate_to_repo = false;
           truncation_symbol = "  ";
         };
 
