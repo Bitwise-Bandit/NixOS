@@ -92,7 +92,9 @@
    programs.sway = {
      enable = true;
      wrapperFeatures.gtk = true;
-     };
+     }; 
+  # Enable Niri
+   programs.niri.enable = true;
   
   # Enable gvfs and udevdisks2
    services.udisks2.enable = true;
