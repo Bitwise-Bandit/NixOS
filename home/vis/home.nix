@@ -15,6 +15,7 @@
     gdb
     librewolf
     yazi
+    nautilus
   ];
 
 
