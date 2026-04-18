@@ -134,7 +134,6 @@
  
   home-manager.useGlobalPkgs = true;
  
-home-manager.users.vis = ./home.nix;
 
  # Set the environment variables
   environment.variables = {
