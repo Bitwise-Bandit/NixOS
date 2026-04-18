@@ -12,7 +12,13 @@
       # Include the home manager.
       inputs.home-manager.nixosModules.home-manager
     ];
-
+ # enable home manager
+  home-manager = {
+    extraSpecialArgs = { inherit inputs ; };
+    users = {
+      "vis" = import ../../home/vis/home.nix;
+    };
+  };
   # Enabling experimental features(flakes)
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
