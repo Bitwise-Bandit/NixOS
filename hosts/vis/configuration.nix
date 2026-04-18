@@ -2,7 +2,7 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{ inputs, config, lib, pkgs, ... }:
 
 {
   imports =
@@ -10,7 +10,7 @@
       ./hardware-configuration.nix
       
       # Include the home manager.
-      <home-manager/nixos>
+      inputs.home-manager.nixosModules.home-manager
     ];
 
   # Enabling experimental features(flakes)
