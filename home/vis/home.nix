@@ -30,6 +30,9 @@
       plugins = [ "git" "fzf" ];
       theme = "simple";
   };
+    shellAliases = {
+      update = "sudo nixos-rebuild switch --flake ~/NixOS#vis";
+      };
 
 };
 
