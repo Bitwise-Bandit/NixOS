@@ -93,6 +93,9 @@
    services.udisks2.enable = true;
    services.gvfs.enable = true;
 
+  # add upower service
+   services.upower.enable = true;
+
   # Enable gnome keyring and polkit
    services.gnome.gnome-keyring.enable = true;
    security.polkit.enable = true;
