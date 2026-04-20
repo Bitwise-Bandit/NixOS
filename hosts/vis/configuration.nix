@@ -9,16 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       
-      # Include the home manager.
-      inputs.home-manager.nixosModules.home-manager
     ];
- # enable home manager
-  home-manager = {
-    extraSpecialArgs = { inherit inputs ; };
-    users = {
-      "vis" = import ../../home/vis/home.nix;
-    };
-  };
   # Enabling experimental features(flakes)
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -114,7 +105,6 @@
   # Enable libvirtd service
    virtualisation.libvirtd.enable = true;
 
-  environment.systemPackages = [ pkgs.xwayland-satellite ];
 
   # Enable zram
    zramSwap.enable = true;
@@ -136,7 +126,6 @@
      ];
    };
  
-  home-manager.useGlobalPkgs = true;
  
 
  # Set the environment variables
@@ -177,6 +166,7 @@
      wl-clipboard
      wofi
      wget
+     xwayland-satellite
      zathura
      zathuraPkgs.zathura_pdf_mupdf
      ];

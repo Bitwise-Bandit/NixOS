@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the
@@ -32,6 +32,18 @@
   };
 
 };
+
+   #Enable niri with dms
+   imports = [
+    inputs.niri.homeModules.config
+    inputs.dms.homeModules.niri
+    inputs.dms.homeModules.dank-material-shell
+  ];
+
+  programs.niri.config = null;
+  programs.dank-material-shell.enable = true;
+  programs.dank-material-shell.niri.includes.enable = false;
+
 
    #Enabling bash
      programs.bash = {
