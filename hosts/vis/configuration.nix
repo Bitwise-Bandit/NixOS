@@ -95,13 +95,12 @@
 
   # add upower service
    services.upower.enable = true;
+   services.power-profiles-daemon.enable = true;
 
   # Enable gnome keyring and polkit
    services.gnome.gnome-keyring.enable = true;
    security.polkit.enable = true;
 
-  # Enable tlp
-   services.tlp.enable = true;
 
   # Enable flatpak
    services.flatpak.enable = true;
