@@ -18,6 +18,10 @@
       url = "github:Supreeeme/xwayland-satellite";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    quickshell = {
+      url = "github:quickshell-mirror/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     dms = {
       url = "github:AvengeMedia/DankMaterialShell";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -55,6 +59,7 @@
             imports = [ inputs.niri.nixosModules.niri ];
             nixpkgs.overlays = [
               inputs.niri.overlays.niri
+              inputs.quickshell.overlays.default
               inputs.xwayland-satellite.overlays.default
               ];
             }

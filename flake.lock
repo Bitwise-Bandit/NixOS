@@ -191,6 +191,26 @@
         "url": "https://git.outfoxxed.me/quickshell/quickshell"
       }
     },
+    "quickshell_2": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1776589301,
+        "narHash": "sha256-3g+BPNYwKrjOtBaQi1cLBEtLKtDLZAS01gFd6/ybtlE=",
+        "owner": "quickshell-mirror",
+        "repo": "quickshell",
+        "rev": "9a54119893bdd30fec628063322bc726f96afc1f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "quickshell-mirror",
+        "repo": "quickshell",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "dgop": "dgop",
@@ -198,6 +218,7 @@
         "home-manager": "home-manager",
         "niri": "niri",
         "nixpkgs": "nixpkgs",
+        "quickshell": "quickshell_2",
         "unstable": "unstable",
         "xwayland-satellite": "xwayland-satellite"
       }
