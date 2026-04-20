@@ -95,6 +95,7 @@
      }; 
   # Enable Niri
    programs.niri.enable = true;
+   programs.niri.package = pkgs.niri-unstable;
   
   # Enable gvfs and udevdisks2
    services.udisks2.enable = true;
@@ -113,6 +114,7 @@
   # Enable libvirtd service
    virtualisation.libvirtd.enable = true;
 
+  environment.systemPackages = [ pkgs.xwayland-satellite ];
 
   # Enable zram
    zramSwap.enable = true;
