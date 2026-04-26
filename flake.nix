@@ -59,7 +59,6 @@
             imports = [ inputs.niri.nixosModules.niri ];
             nixpkgs.overlays = [
               inputs.niri.overlays.niri
-              inputs.quickshell.overlays.default
               inputs.xwayland-satellite.overlays.default
               ];
             }
@@ -79,6 +78,8 @@
                  (_: _: {
                    dgop = inputs.dgop.packages.${system}.default;    
                  })    
+                  inputs.quickshell.overlays.default
+
               ];
               }
                 ./home/vis/home.nix

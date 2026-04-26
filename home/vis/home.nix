@@ -16,6 +16,7 @@
     librewolf
     yazi
     nautilus
+    vencord
   ];
 
 
@@ -43,8 +44,10 @@
     inputs.dms.homeModules.dank-material-shell
   ];
 
+ 
   programs.niri.config = null;
   programs.dank-material-shell.enable = true;
+  programs.dank-material-shell.quickshell.package = pkgs.quickshell;
   programs.dank-material-shell.niri.includes.enable = false;
 
 
