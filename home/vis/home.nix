@@ -14,7 +14,7 @@
     gammastep
     gdb
     librewolf
-    helium
+    brave
     yazi
     nautilus
   ];
