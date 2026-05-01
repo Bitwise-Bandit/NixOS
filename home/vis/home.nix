@@ -16,7 +16,6 @@
     librewolf
     yazi
     nautilus
-    vencord
   ];
 
 

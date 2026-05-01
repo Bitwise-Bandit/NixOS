@@ -88,6 +88,7 @@
   # Enable Niri
    programs.niri.enable = true;
    programs.niri.package = pkgs.niri-unstable;
+
   
   # Enable gvfs and udevdisks2
    services.udisks2.enable = true;
