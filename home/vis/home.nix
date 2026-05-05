@@ -17,6 +17,8 @@
     brave
     yazi
     nautilus
+    lua-language-server
+    nil
   ];
 
 

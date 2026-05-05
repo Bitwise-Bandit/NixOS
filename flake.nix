@@ -52,7 +52,7 @@
       nixosConfigurations = {
         vis = nixpkgs.lib.nixosSystem {
           specialArgs = {
-            inherit inputs;
+            inherit inputs ;
           };
           modules = [
             {
