@@ -18,6 +18,7 @@
     yazi
     nautilus
     lua-language-server
+    stylelua
     nil
   ];
 
