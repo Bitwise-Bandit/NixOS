@@ -30,6 +30,9 @@
   networking.networkmanager.enable = true;
 
   nixpkgs.config.allowUnfree = true;
+  
+  #uninstall xterm
+  services.xserver.desktopManager.xterm.enable = false;
 
   # Set your time zone.
    time.timeZone = "Asia/Kolkata";

@@ -34,7 +34,8 @@
       theme = "simple";
   };
     shellAliases = {
-      update = "sudo nixos-rebuild switch --flake ~/NixOS#vis";
+      niu = "sudo nixos-rebuild switch --flake ~/NixOS#vis";
+        hoe = "home-manager switch --flake ~/NixOS#vis";
       };
 
 };
