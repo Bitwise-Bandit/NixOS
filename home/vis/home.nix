@@ -9,16 +9,20 @@
   # Packages that should be installed to the user profile.
  
   home.packages = with pkgs; [
+    alejandra
     cmake
     qimgv
     gammastep
     gdb
+    jujutsu
     librewolf
     brave
     yazi
     nautilus
     lua-language-server
     nil
+    zellij
+
   ];
 
 
