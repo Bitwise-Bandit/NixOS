@@ -1,4 +1,3 @@
-
 {
   description = "dotfiles";
 
@@ -11,8 +10,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     niri = {
-    url = "github:sodiboo/niri-flake";
-    inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     xwayland-satellite = {
       url = "github:Supreeeme/xwayland-satellite";
@@ -32,59 +31,61 @@
     };
   };
 
-
-  outputs =
-    {
-      self,
-      nixpkgs,
-      home-manager,
-      niri,
-      ...
-    }@inputs:
-    let 
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    unstable,
+    niri,
+    ...
+  } @ inputs: let
     system = "x86_64-linux";
-    pkgs = import nixpkgs { 
-     inherit system;
+    pkgs = import nixpkgs {
+      inherit system;
       config.allowUnfree = true;
-      };
-   in
-    {
-      nixosConfigurations = {
-        vis = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs ;
-          };
-          modules = [
-            {
-            imports = [ inputs.niri.nixosModules.niri ];
+    };
+
+    pkgs-unstable = import unstable {
+      inherit system;
+      config.allowUnfree = true;
+    };
+  in {
+    nixosConfigurations = {
+      vis = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit inputs;
+          inherit pkgs-unstable;
+        };
+        modules = [
+          {
+            imports = [inputs.niri.nixosModules.niri];
             nixpkgs.overlays = [
               inputs.niri.overlays.niri
               inputs.xwayland-satellite.overlays.default
-              ];
-            }
-            ./hosts/vis/configuration.nix
-          ];
-        };
-      };
-      homeConfigurations = {
-        vis = home-manager.lib.homeManagerConfiguration  { 
-          inherit pkgs;
-          extraSpecialArgs = {
-            inherit inputs;
-            };
-            modules = [ 
-            { 
-              nixpkgs.overlays = [
-                 (_: _: {
-                   dgop = inputs.dgop.packages.${system}.default;    
-                 })    
-                  inputs.quickshell.overlays.default
-
-              ];
-              }
-                ./home/vis/home.nix
-                ];
-        };
+            ];
+          }
+          ./hosts/vis/configuration.nix
+        ];
       };
     };
+    homeConfigurations = {
+      vis = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        extraSpecialArgs = {
+          inherit inputs;
+        };
+        modules = [
+          {
+            nixpkgs.overlays = [
+              (_: _: {
+                dgop = inputs.dgop.packages.${system}.default;
+              })
+              inputs.quickshell.overlays.default
+            ];
+          }
+          ./home/vis/home.nix
+        ];
+      };
+    };
+  };
 }

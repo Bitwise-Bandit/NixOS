@@ -24,6 +24,7 @@
     nautilus
     lua-language-server
     nil
+    tree-sitter
     zellij
   ];
 
