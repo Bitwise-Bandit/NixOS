@@ -13,18 +13,20 @@
 
   home.packages = with pkgs; [
     alejandra
+    brave
     cmake
     qimgv
     gammastep
     gdb
     jujutsu
     librewolf
-    brave
-    yazi
-    nautilus
     lua-language-server
+    nautilus
     nil
+    protonvpn-gui
     tree-sitter
+    wireguard-tools
+    yazi
     zellij
   ];
 

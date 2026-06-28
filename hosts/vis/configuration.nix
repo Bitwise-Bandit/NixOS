@@ -30,11 +30,8 @@
 
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
-
+  networking.firewall.checkReversePath = false;
   nixpkgs.config.allowUnfree = true;
-
-  #uninstall xterm
-  services.xserver.desktopManager.xterm.enable = false;
 
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
