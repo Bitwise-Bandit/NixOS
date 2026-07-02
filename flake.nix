@@ -29,6 +29,10 @@
       url = "github:AvengeMedia/dgop";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    pwndbg = {
+      url = "github:pwndbg/pwndbg";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -37,6 +41,7 @@
     home-manager,
     unstable,
     niri,
+    pwndbg,
     ...
   } @ inputs: let
     system = "x86_64-linux";

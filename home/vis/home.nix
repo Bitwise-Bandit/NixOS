@@ -11,24 +11,29 @@
 
   # Packages that should be installed to the user profile.
 
-  home.packages = with pkgs; [
-    alejandra
-    brave
-    cmake
-    qimgv
-    gammastep
-    gdb
-    jujutsu
-    librewolf
-    lua-language-server
-    nautilus
-    nil
-    protonvpn-gui
-    tree-sitter
-    wireguard-tools
-    yazi
-    zellij
-  ];
+  home.packages = with pkgs;
+    [
+      alejandra
+      brave
+      cmake
+      qimgv
+      gammastep
+      gdb
+      jujutsu
+      librewolf
+      lldb
+      lua-language-server
+      nautilus
+      nil
+      proton-vpn
+      tree-sitter
+      wireguard-tools
+      yazi
+      zellij
+    ]
+    ++ [
+      inputs.pwndbg.packages.${pkgs.stdenv.hostPlatform.system}.default
+    ];
 
   home.sessionVariables = {
     TERMINAL = "kitty";
