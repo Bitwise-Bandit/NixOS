@@ -27,6 +27,7 @@
       nil
       proton-vpn
       tree-sitter
+      vesktop
       wireguard-tools
       yazi
       zellij
